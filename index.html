@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Campa Juve 2027 — 9.ª Edición. Campamento juvenil diocesano de la Arquidiócesis de Santa Fe. Comunión, encuentro con Jesucristo y eutrapelia.">
+  <meta name="theme-color" content="#08223B">
+  <title>Campa Juve 2027 — 9.ª Edición | Diócesis de Santa Fe</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo-campa-juve-2027.png">
+
+  <!-- Google Fonts: Montserrat (400, 500, 600, 700, 800) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="top">
+  <!-- Skip Link para accesibilidad -->
+  <a href="#inicio" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="Campa Juve 2027 — Volver al inicio">
+        <img
+          src="assets/fuego.svg"
+          alt="Isotipo Fuego Campa Juve"
+          class="brand-isotipo"
+          height="32"
+        >
+        <img
+          src="assets/carpa.svg"
+          alt="Isotipo Carpa Campa Juve"
+          class="brand-isotipo"
+          height="32"
+        >
+      </a>
+
+      <button
+        type="button"
+        class="nav-toggle"
+        id="navToggle"
+        aria-expanded="false"
+        aria-controls="mainNav"
+        aria-label="Abrir menú de navegación"
+      >
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#historia" class="nav-link">Historia</a></li>
+          <li><a href="#eutrapelia" class="nav-link">Eutrapelia</a></li>
+          <li><a href="#info-pago" class="nav-link">Info y Pago</a></li>
+          <li><a href="#inscripcion" class="btn btn-primary btn-sm nav-cta">Inscribite ahora</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <!-- ================= 1. HERO / PORTADA ================= -->
+    <section class="hero" aria-label="Campa Juve 2027 — 9.ª Edición">
+      <div class="hero-bg-decor" aria-hidden="true">
+        <div class="hero-fogon-bg"></div>
+        <div class="stars-layer"></div>
+        <div class="hero-sparks">
+          <span class="spark"></span>
+          <span class="spark"></span>
+          <span class="spark"></span>
+          <span class="spark"></span>
+          <span class="spark"></span>
+          <span class="spark"></span>
+          <span class="spark"></span>
+          <span class="spark"></span>
+          <span class="spark"></span>
+          <span class="spark"></span>
+          <span class="spark"></span>
+          <span class="spark"></span>
+        </div>
+        <div class="compass-watermark"></div>
+      </div>
+
+      <div class="container hero-grid">
+        <!-- Izquierda: Logotipo oficial -->
+        <div class="hero-visual">
+          <div class="logo-stage">
+            <div class="logo-glow" aria-hidden="true"></div>
+            <img
+              src="assets/logo-campa-juve-2027.png"
+              alt="Logotipo oficial de Campa Juve 9.ª Edición con timón, largavista, estrella, carpa y fuego"
+              class="hero-logo-img"
+              width="480"
+              height="376"
+              onerror="this.style.display='none'; document.getElementById('heroLogoFallback').style.display='flex';"
+            >
+            <div id="heroLogoFallback" class="hero-logo-fallback" style="display:none;" aria-hidden="true">
+              <span class="fallback-edition">9.ª EDICIÓN</span>
+              <span class="fallback-title">CAMPA JUVE</span>
+              <span class="fallback-year">2027</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Derecha: Fechas destacadas + Lugar flotantes y botón compacto -->
+        <div class="hero-content">
+          <div class="hero-date-block" role="region" aria-label="Fechas del campamento">
+            <div class="hero-date-eyebrow">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2"/>
+                <path d="M16 2v4M8 2v4M3 10h18"/>
+              </svg>
+              <span>Fechas del Campamento</span>
+            </div>
+            <div class="hero-date-value" data-config="EVENT_DATES">Del 5 al 8 de febrero de 2027</div>
+          </div>
+
+          <div class="hero-location-block" role="region" aria-label="Lugar del campamento">
+            <div class="hero-location-info">
+              <svg class="icon hero-location-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span class="hero-location-text" data-config="EVENT_LOCATION">Casa de Retiro Padre Lamy · Colastiné Norte, Santa Fe</span>
+            </div>
+
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Casa+de+Retiro+Padre+Lamy,+Colastin%C3%A9+Norte,+Santa+Fe,+Argentina"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary hero-maps-btn"
+              data-config-href="GOOGLE_MAPS_URL"
+            >
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+              </svg>
+              Cómo llegar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+          <path d="M0,48 C360,92 1080,4 1440,56 L1440,80 L0,80 Z" fill="#F8F6F2"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ================= CONTADOR DE CUPOS Y TEMPORIZADOR ================= -->
+    <section id="cupos-cuenta-regresiva" class="section-cupos" aria-label="Cupos disponibles y cierre de inscripciones">
+      <div class="container">
+        <div class="cupos-wrapper">
+          <!-- 1. Contador de participantes (máx. 70, sin organizadores) -->
+          <div class="cupos-card">
+            <div class="cupos-header">
+              <span class="cupos-eyebrow">Cupos limitados · 9.ª Edición</span>
+              <h2 class="cupos-title">Participantes inscriptos</h2>
+            </div>
+
+            <div class="cupos-stats" role="list" aria-label="Estado de cupos de participantes">
+              <div class="cupo-stat" role="listitem">
+                <span class="cupo-number" id="countInscriptos">0</span>
+                <span class="cupo-label">Inscriptos</span>
+              </div>
+              <div class="cupo-divider" aria-hidden="true"></div>
+              <div class="cupo-stat cupo-stat-accent" role="listitem">
+                <span class="cupo-number" id="countDisponibles">70</span>
+                <span class="cupo-label">Cupos disponibles</span>
+              </div>
+            </div>
+
+            <div class="cupos-progress-track" aria-hidden="true">
+              <div class="cupos-progress-fill" id="cuposProgressBar" style="width: 0%;"></div>
+            </div>
+
+            <p class="cupos-note">
+              ¡No te quedes afuera!
+            </p>
+            <div class="cupos-full-notice" id="cuposFullNotice" hidden>
+              ¡Se completó el cupo máximo de 70 participantes! Consultanos por WhatsApp para lista de espera.
+            </div>
+          </div>
+
+          <!-- 2. Temporizador animado hasta el 15/01/2027 -->
+          <div class="countdown-card" aria-live="off">
+            <div class="countdown-header">
+              <span class="countdown-eyebrow">Cierre de inscripciones · 15 de enero de 2027</span>
+            </div>
+
+            <div class="countdown-grid" id="countdownGrid">
+              <div class="countdown-unit">
+                <span class="countdown-value" id="cdDays">00</span>
+                <span class="countdown-label">Días</span>
+              </div>
+              <div class="countdown-unit">
+                <span class="countdown-value" id="cdHours">00</span>
+                <span class="countdown-label">Horas</span>
+              </div>
+              <div class="countdown-unit">
+                <span class="countdown-value" id="cdMinutes">00</span>
+                <span class="countdown-label">Minutos</span>
+              </div>
+              <div class="countdown-unit">
+                <span class="countdown-value" id="cdSeconds">00</span>
+                <span class="countdown-label">Segundos</span>
+              </div>
+            </div>
+
+            <div class="countdown-closed" id="countdownClosedNotice" hidden>
+              Las inscripciones cerraron el 15 de enero de 2027.
+            </div>
+          </div>
+
+          <p class="belen-priority-note">
+            <strong>Importante:</strong> Si se completa el cupo antes del cierre y quedan jóvenes de la comunidad de Belén sin lugar frente a inscriptos de otras comunidades, se dará prioridad de participación a los jóvenes de nuestra comunidad.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 2. HISTORIA Y ESPIRITUALIDAD ================= -->
+    <section id="historia" class="section section-light">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Nuestra raíz y carisma</span>
+          <h2 class="section-title">Historia y Espiritualidad</h2>
+          <p class="section-subtitle">
+            Desde 2016 caminando juntos como Iglesia joven en Santa Fe, forjando amistades verdaderas y un encuentro vivo con el Señor.
+          </p>
+        </div>
+
+        <div class="history-blocks">
+          <!-- Bloque 1: img_voley -->
+          <article class="history-row">
+            <div class="history-media">
+              <img
+                src="assets/img_voley.jpg"
+                alt="Jóvenes compartiendo juegos y alegría en Campa Juve"
+                loading="lazy"
+              >
+            </div>
+            <div class="history-text">
+              <span class="history-tag">2016 · El origen</span>
+              <h3>¿Quiénes somos?</h3>
+              <p>
+                Campa Juve nació en 2016 por iniciativa del <strong>P. Daniel Gazze</strong> en la <strong>Parroquia Nuestra Señora de Belén</strong> (Colastiné Norte, Santa Fe), con el deseo de reunir a jóvenes de distintos grupos, parroquias, movimientos, carismas y apostolados de toda la Diócesis de Santa Fe en un verdadero encuentro con Jesucristo.
+              </p>
+            </div>
+          </article>
+
+          <!-- Bloque 2: img_abrazo -->
+          <article class="history-row is-reversed">
+            <div class="history-media">
+              <img
+                src="assets/img_abrazo.jpg"
+                alt="Encuentro fraterno y comunión entre jóvenes en Campa Juve"
+                loading="lazy"
+              >
+            </div>
+            <div class="history-text">
+              <span class="history-tag history-tag-blue">10 años de camino · 9.ª Edición</span>
+              <h3>Frutos que trascienden generaciones</h3>
+              <p>
+                La primera edición tuvo lugar en la Casa de Retiro Padre Lamy, perteneciente a la Congregación de los hermanos Servidores de Jesús y de María, con una convocatoria de más de 40 jóvenes. Otro de los lugares protagonistas de este evento fueron las Sierras Cordobesas, en la localidad de La Granja, en 2018. Tales fueron los frutos en los jóvenes, que hasta el día de hoy, 10 años después, este campamento de verano ya se encuentra en su 9ena. edición.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. EUTRAPELIA ================= -->
+    <section id="eutrapelia" class="section section-navy">
+      <div class="container">
+        <!-- Bloque destacado de Eutrapelia -->
+        <aside class="eutrapelia-card eutrapelia-in-symbols" aria-labelledby="eutrapeliaTitle">
+          <p class="eutrapelia-question">¿Sabés cuál es la virtud principal de nuestro campamento?</p>
+          <h2 id="eutrapeliaTitle" class="eutrapelia-title">Eutrapelia</h2>
+          <p class="eutrapelia-lead">
+            Es la virtud cristiana del <strong>equilibrio y la madurez</strong> entre la alegría sana y la seriedad profunda.
+          </p>
+          <p>
+            En Campa Juve jugamos, cantamos, compartimos el fogón y nos reímos a carcajadas, y al mismo tiempo nos abrimos al silencio, la oración, la Eucaristía y el servicio. Cuando la diversión y la fe caminan juntas con nobleza, revelan el verdadero <strong>rostro de Cristo</strong>.
+          </p>
+          <blockquote class="eutrapelia-quote">
+            “La alegría que brota del encuentro con Cristo no es superficial: es luminosa, fraterna y nos impulsa a vivir en plenitud.”
+          </blockquote>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ================= 4. DATOS PRÁCTICOS, ARANCEL Y FONDO SOLIDARIO ================= -->
+    <section id="info-pago" class="section section-light">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="infoPagoTitle" class="section-title title-reveal">Todo lo que necesitás saber</h2>
+          <p class="section-subtitle">
+            Organizá tu participación con tiempo. Recordá que el arancel cubre alojamiento, comidas y materiales del campamento.
+          </p>
+        </div>
+
+        <div class="info-grid">
+          <!-- Tarjeta 1: Logística -->
+          <div class="info-card">
+            <div class="info-card-header">
+              <span class="info-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+              </span>
+              <h3>Logística del Campamento</h3>
+            </div>
+            <ul class="info-list">
+              <li>
+                <span>Fechas</span>
+                <strong data-config="EVENT_DATES">A confirmar — Verano 2027</strong>
+              </li>
+              <li>
+                <span>Lugar</span>
+                <strong data-config="EVENT_LOCATION">Santa Fe, Argentina</strong>
+              </li>
+              <li>
+                <span>Destinatarios</span>
+                <strong data-config="AGE_RANGE">Jóvenes entre 15 a 25 años</strong>
+              </li>
+              <li>
+                <span>Incluye</span>
+                <strong>Pensión completa, predio, seguro, materiales y transporte de ida (regreso en autos particulares)</strong>
+              </li>
+            </ul>
+            <div class="bring-note">
+              <strong>¿Qué llevar?</strong> Más cerca de la fecha del campa estaremos informando todo lo necesario para que puedas vivir la experiencia al 100%
+            </div>
+          </div>
+
+          <!-- Tarjeta 2: ¿Cuánto cuesta? -->
+          <div class="info-card info-card-featured">
+            <div class="info-card-header">
+              <span class="info-icon info-icon-orange" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="5" width="20" height="14" rx="2"/>
+                  <path d="M2 10h20"/>
+                </svg>
+              </span>
+              <h3>¿Cuánto cuesta?</h3>
+            </div>
+
+            <div class="price-box">
+              <span class="price-label">Costo total</span>
+              <div class="price-value" data-config="FEE_AMOUNT">$100.000</div>
+              <p class="price-note" data-config="FEE_NOTE">Posibilidad de abonar en cuotas o con seña inicial.</p>
+            </div>
+
+            <div class="bank-details">
+              <div class="copy-row">
+                <div>
+                  <span class="copy-label">Alias</span>
+                  <strong class="copy-value" data-config="BANK_ALIAS">jovenes.belen</strong>
+                </div>
+                <button type="button" class="btn-copy" data-copy-target="BANK_ALIAS" aria-label="Copiar Alias">
+                  Copiar
+                </button>
+              </div>
+
+              <div class="bank-holder">
+                <div>Titular: <strong data-config="BANK_HOLDER">Parroquia Nuestra Señora de Belén</strong></div>
+                <div>CUIT: <strong data-config="BANK_CUIT">30-53838876-5</strong> · Banco: <strong data-config="BANK_NAME">Santander</strong></div>
+              </div>
+            </div>
+
+            <div class="payment-cta-group">
+              <button
+                type="button"
+                class="btn btn-primary btn-block"
+                data-open-pay-modal
+              >
+                Pagar con Mercado Pago o banco
+              </button>
+              <a href="#inscripcion" class="btn btn-secondary btn-block">
+                Ya pagué · Cargar comprobante
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fondo Solidario -->
+        <div class="solidarity-banner" role="region" aria-labelledby="solidarityTitle">
+          <div class="solidarity-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <div class="solidarity-content">
+            <h3 id="solidarityTitle">Fondo Solidario y Becas: ¡Que lo económico no sea un freno!</h3>
+            <p>
+              Si tenés dificultades para cubrir el arancel total o parcial, contamos con un <strong>Fondo Solidario</strong> sostenido por toda la comunidad. Al inscribirte, podés seleccionar la opción <em>“Solicitud de beca / apoyo solidario”</em> y el equipo se comunicará con vos con total reserva. También podés colaborar aportando a este fondo.
+            </p>
+          </div>
+          <div class="solidarity-action">
+            <a href="#inscripcion" class="btn btn-outline-brown" id="btnSelectBeca">
+              Solicitar apoyo
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5. FORMULARIO DE INSCRIPCIÓN + PAGO + COMPROBANTE ================= -->
+    <section id="inscripcion" class="section section-tinted">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Sumate a la 9.ª Edición</span>
+          <h2 class="section-title">Formulario de Inscripción</h2>
+          <p class="section-subtitle">
+            Completá tus datos con atención. Al finalizar, vas a recibir tu código único de inscripción (<strong>CJ27-XXXX</strong>).
+          </p>
+          <div class="organizer-cta-wrap">
+            <a
+              href="organizador.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-outline-navy btn-sm organizer-btn"
+            >
+              Soy organizador ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Selector discreto entre Nueva Inscripción y Carga de 2.ª Cuota -->
+        <div class="form-mode-switcher" role="tablist" aria-label="Tipo de trámite">
+          <button
+            type="button"
+            class="mode-tab is-active"
+            id="tabInscripcion"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panelInscripcion"
+          >
+            Nueva inscripción
+          </button>
+          <button
+            type="button"
+            class="mode-tab"
+            id="tabSegundaCuota"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panelSegundaCuota"
+          >
+            ¿Ya te inscribiste? Cargá el comprobante de la 2.ª cuota
+          </button>
+        </div>
+
+        <div id="panelInscripcion" class="inscripcion-panel" role="tabpanel" aria-labelledby="tabInscripcion">
+          <!-- Capa de papelitos blancos (confetti sutil al confirmar) -->
+          <div id="confettiLayer" class="confetti-layer" aria-hidden="true"></div>
+
+          <!-- ================= 6. CONFIRMACIÓN DE INSCRIPCIÓN ================= -->
+          <div id="confirmationPanel" class="confirmation-card" hidden aria-live="polite">
+            <div class="confirm-check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+
+            <h3>¡Felicitaciones! ¡Ya sos parte del campa!</h3>
+            <p class="confirm-subtitle">
+              ¡Qué alegría que te sumes a la 9.ª Edición de Campa Juve 2027! Guardá tu código único de inscripción:
+            </p>
+
+            <div class="code-box">
+              <span class="code-label">Código de inscripción</span>
+              <strong class="code-value" id="confirmCode">CJ27-XXXX</strong>
+              <button type="button" class="btn-copy" id="btnCopyCode">Copiar código</button>
+            </div>
+
+            <div id="confirmCuotasNote" class="cuotas-reminder" hidden>
+              <strong>Recordatorio de 2.ª cuota:</strong> Guardá o sacale captura a tu código <strong><span id="confirmCodeInline">CJ27-XXXX</span></strong> para cargar el comprobante de enero 2027 desde la pestaña <em>“¿Ya te inscribiste? Cargá el comprobante de la 2.ª cuota”</em>.
+            </div>
+
+            <p class="belen-priority-note belen-priority-confirm">
+              <strong>Nota sobre cupos:</strong> En caso de completarse los 70 lugares antes del cierre de inscripciones, se dará prioridad de participación a los jóvenes que integran la comunidad de Belén frente a inscriptos de otras comunidades.
+            </p>
+
+            <div id="confirmDemoNotice" class="demo-notice" hidden>
+              <strong>Modo vista previa:</strong> Todavía no se configuró una URL activa de Google Apps Script en <code>js/config.js</code>, por lo que esta inscripción se simuló localmente en tu navegador.
+            </div>
+
+            <dl class="confirm-summary" id="confirmSummary"></dl>
+
+            <div class="confirm-actions">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg" id="btnWhatsappConfirm">
+                Enviar mi código por WhatsApp
+              </a>
+              <button type="button" class="btn btn-outline-navy" id="btnGoToSegundaCuota">
+                Cargar comprobante de 2.ª cuota
+              </button>
+            </div>
+          </div>
+
+          <!-- Aviso de cupo completo (solo participantes, cuando inscriptos >= 70) -->
+          <div id="cupoCompletoBanner" class="cupo-completo-banner" role="alert" hidden>
+            <h3>¡Se completaron los 70 cupos para participantes!</h3>
+            <p>
+              Las inscripciones iniciales para participantes se encuentran momentáneamente cerradas por haberse alcanzado el límite de 70 lugares. Recordá que, en caso de corresponder, se dará prioridad de participación a los jóvenes que integran la comunidad de Belén.
+            </p>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-brown btn-sm" data-config-whatsapp>
+              Consultar lista de espera por WhatsApp
+            </a>
+          </div>
+
+          <!-- Formulario -->
+          <form id="registrationForm" class="reg-form" novalidate>
+          <!-- Bloque 1: Datos personales -->
+          <fieldset class="form-card">
+            <legend class="form-legend">
+              <span class="step-badge">1</span>
+              Datos personales
+            </legend>
+
+            <div class="form-grid">
+              <div class="form-group span-2">
+                <label for="nombreCompleto">Apellido y nombre <span class="req">*</span></label>
+                <input type="text" id="nombreCompleto" name="nombreCompleto" required autocomplete="name" placeholder="Ej.: González, María Belén">
+                <span class="field-error" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="fechaNacimiento">Fecha de nacimiento <span class="req">*</span></label>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                <span class="field-error" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="edad">Edad <span class="req">*</span></label>
+                <input type="number" id="edad" name="edad" required min="12" max="99" placeholder="Se calcula automáticamente">
+                <small class="field-hint">Se calcula con tu fecha de nacimiento (podés editarla).</small>
+                <span class="field-error" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="dni">DNI <span class="req">*</span></label>
+                <input type="text" id="dni" name="dni" required inputmode="numeric" pattern="[0-9.\s]{6,12}" placeholder="Ej.: 42.345.678">
+                <span class="field-error" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="telefono">Número de teléfono personal <span class="req">*</span></label>
+                <input type="tel" id="telefono" name="telefono" required autocomplete="tel" placeholder="Ej.: 342 5123456">
+                <span class="field-error" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="tutorNombre">Apellido y nombre de padre/madre/tutor <span class="req">*</span></label>
+                <input type="text" id="tutorNombre" name="tutorNombre" required placeholder="Ej.: Pérez, Laura">
+                <span class="field-error" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="tutorTelefono">Número de padre/madre/tutor <span class="req">*</span></label>
+                <input type="tel" id="tutorTelefono" name="tutorTelefono" required placeholder="Ej.: 342 4987654">
+                <span class="field-error" aria-live="polite"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Bloque 2: Comunidad de origen -->
+          <fieldset class="form-card">
+            <legend class="form-legend">
+              <span class="step-badge">2</span>
+              Comunidad de origen
+            </legend>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="parroquia">Parroquia que pertenece <span class="req">*</span></label>
+                <input type="text" id="parroquia" name="parroquia" required placeholder="Ej.: Parroquia Nuestra Señora de Belén">
+                <span class="field-error" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="localidad">Localidad <span class="req">*</span></label>
+                <input type="text" id="localidad" name="localidad" required placeholder="Ej.: Colastiné Norte, Santa Fe">
+                <span class="field-error" aria-live="polite"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Bloque 3: Experiencia -->
+          <fieldset class="form-card">
+            <legend class="form-legend">
+              <span class="step-badge">3</span>
+              Experiencia
+            </legend>
+
+            <div class="form-grid">
+              <div class="form-group span-2" id="participoCampaGroup">
+                <label id="participoCampaLabel">¿Participaste de algún CampaJuve? <span class="req">*</span></label>
+                <div class="radio-options" role="radiogroup" aria-labelledby="participoCampaLabel">
+                  <label class="radio-card">
+                    <input type="radio" name="participoCampa" value="Sí" required>
+                    <span>Sí</span>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="participoCampa" value="No" required>
+                    <span>No</span>
+                  </label>
+                </div>
+                <span class="field-error" aria-live="polite"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Bloque 4: Salud, cuidados y emergencias -->
+          <fieldset class="form-card">
+            <legend class="form-legend">
+              <span class="step-badge">4</span>
+              Salud, cuidados y emergencias
+            </legend>
+
+            <div class="form-grid">
+              <div class="form-group span-2">
+                <label for="obraSocialAfiliado">Obra social y número de afiliado</label>
+                <input type="text" id="obraSocialAfiliado" name="obraSocialAfiliado" placeholder="Ej.: IAPOS — N.º 12345678 / No posee">
+              </div>
+
+              <div class="form-group span-2">
+                <label for="alergias">¿Es alérgico a algo? ¿A qué?</label>
+                <textarea id="alergias" name="alergias" rows="2" placeholder="Indicá si sos alérgico a alimentos, medicamentos, picaduras, etc. (o escribí 'No')."></textarea>
+              </div>
+
+              <div class="form-group span-2">
+                <label for="alimentacionEspecial">Alimentación especial</label>
+                <input type="text" id="alimentacionEspecial" name="alimentacionEspecial" placeholder="Ej.: celiaquía, vegetarianismo, intolerancias u otra aclaración">
+              </div>
+
+              <div class="form-group span-2">
+                <label for="tratamientoMedicacion">¿Se encuentra en tratamiento médico o consume medicación diaria?</label>
+                <textarea id="tratamientoMedicacion" name="tratamientoMedicacion" rows="2" placeholder="Indicá tratamiento, medicación y dosis si corresponde (o escribí 'No')."></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Bloque 5: Pago y comprobante -->
+          <fieldset class="form-card">
+            <legend class="form-legend">
+              <span class="step-badge">5</span>
+              Pago y comprobante
+            </legend>
+
+            <!-- Accesos rápidos de pago dentro del formulario -->
+            <div class="form-payment-bar">
+              <div class="form-payment-info">
+                <div>
+                  <span class="mini-label">Alias:</span>
+                  <strong data-config="BANK_ALIAS">jovenes.belen</strong>
+                  <button type="button" class="btn-copy-inline" data-copy-target="BANK_ALIAS">Copiar</button>
+                </div>
+                <div>
+                  <span class="mini-label">Titular:</span>
+                  <strong data-config="BANK_HOLDER">Parroquia Nuestra Señora de Belén</strong>
+                </div>
+              </div>
+              <button
+                type="button"
+                class="btn btn-secondary btn-sm"
+                data-open-pay-modal
+              >
+                Pagar con Mercado Pago o banco
+              </button>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group span-2">
+                <label for="modalidadPago">Modalidad de pago <span class="req">*</span></label>
+                <select id="modalidadPago" name="modalidadPago" required>
+                  <option value="">Seleccioná una modalidad...</option>
+                  <option value="Pago total">Pago total</option>
+                  <option value="En 2 cuotas (1.ª cuota dic 2026 / 2.ª cuota ene 2027)">En 2 cuotas (1.ª cuota en diciembre 2026 y 2.ª cuota en enero 2027)</option>
+                  <option value="Solicitud de Beca / Fondo Solidario">Solicitud de Beca / Fondo Solidario</option>
+                </select>
+                <span class="field-error" aria-live="polite"></span>
+              </div>
+
+              <!-- Nota contextual para 2 cuotas -->
+              <div class="form-group span-2" id="cuotasNoteBox" hidden>
+                <div class="info-callout">
+                  <strong>Pago en 2 cuotas:</strong> Subí ahora el comprobante de tu <strong>1.ª cuota (diciembre 2026)</strong>. Al confirmar, guardá o sacale captura a tu código <code>CJ27-XXXX</code> para cargar después el comprobante de la 2.ª cuota en enero 2027.
+                </div>
+              </div>
+
+              <!-- Nota contextual para beca -->
+              <div class="form-group span-2" id="becaNoteBox" hidden>
+                <div class="info-callout">
+                  <strong>Fondo Solidario:</strong> No necesitás adjuntar comprobante ahora. El equipo de coordinación se pondrá en contacto con vos por WhatsApp con total reserva para acompañarte.
+                </div>
+                <label for="becaDetalle" class="mt-sm">¿Querés contarnos brevemente tu situación? (Opcional)</label>
+                <textarea id="becaDetalle" name="becaDetalle" rows="2" placeholder="Ej.: Necesito beca parcial o facilidades de pago."></textarea>
+              </div>
+
+              <!-- Carga de comprobante -->
+              <div class="form-group span-2" id="comprobanteGroup">
+                <label for="comprobanteArchivo">
+                  <span id="comprobanteLabelText">Comprobante de Pago (JPG, PNG o PDF · máx. 5 MB)</span>
+                  <span class="req" id="comprobanteReqStar">*</span>
+                </label>
+
+                <div class="upload-zone" id="uploadZone">
+                  <input
+                    type="file"
+                    id="comprobanteArchivo"
+                    name="comprobanteArchivo"
+                    accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf"
+                    class="upload-input"
+                  >
+                  <div class="upload-placeholder" id="uploadPlaceholder">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                      <polyline points="17 8 12 3 7 8"/>
+                      <line x1="12" y1="3" x2="12" y2="15"/>
+                    </svg>
+                    <p><strong>Tocá para subir</strong> o arrastrá tu comprobante acá</p>
+                    <span>Formatos permitidos: JPG, PNG o PDF</span>
+                  </div>
+
+                  <div class="upload-preview" id="uploadPreview" hidden>
+                    <img id="previewImg" alt="Vista previa del comprobante" hidden>
+                    <div class="pdf-badge" id="previewPdfBadge" hidden>PDF</div>
+                    <div class="upload-file-meta">
+                      <strong id="previewFileName">archivo.jpg</strong>
+                      <span id="previewFileSize">0 KB</span>
+                    </div>
+                    <button type="button" class="btn-remove-file" id="btnRemoveFile" aria-label="Quitar archivo">
+                      Quitar
+                    </button>
+                  </div>
+                </div>
+                <span class="field-error" aria-live="polite"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Botón de envío -->
+          <div class="form-submit-wrap">
+            <div class="form-global-error" id="formGlobalError" role="alert" hidden></div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-submit" id="submitBtn">
+              <span class="btn-label">Confirmar mi Inscripción</span>
+              <span class="btn-spinner" aria-hidden="true" hidden></span>
+            </button>
+            <p class="privacy-note">
+              Tus datos serán utilizados exclusivamente por el equipo organizador de Campa Juve 2027 para la logística, seguro y cuidado pastoral del campamento.
+            </p>
+          </div>
+          </form>
+        </div>
+
+        <!-- ================= PANEL 2.ª CUOTA ================= -->
+        <div id="panelSegundaCuota" role="tabpanel" aria-labelledby="tabSegundaCuota" hidden>
+          <form id="secondInstallmentForm" class="reg-form" novalidate>
+            <fieldset class="form-card">
+              <legend class="form-legend">
+                <span class="step-badge step-badge-blue">2.ª</span>
+                Carga de comprobante — 2.ª cuota (enero 2027)
+              </legend>
+
+              <p class="cuota2-intro">
+                Si ya completaste tu inscripción inicial en 2 cuotas, subí acá el comprobante de tu 2.ª cuota sin volver a cargar todos tus datos.
+              </p>
+
+              <div class="form-payment-bar">
+                <div class="form-payment-info">
+                  <div>
+                    <span class="mini-label">Alias:</span>
+                    <strong data-config="BANK_ALIAS">jovenes.belen</strong>
+                    <button type="button" class="btn-copy-inline" data-copy-target="BANK_ALIAS">Copiar</button>
+                  </div>
+                  <div>
+                    <span class="mini-label">Titular:</span>
+                    <strong data-config="BANK_HOLDER">Parroquia Nuestra Señora de Belén</strong>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-sm"
+                  data-open-pay-modal
+                >
+                  Pagar con Mercado Pago o banco
+                </button>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group span-2">
+                  <label for="cuota2Nombre">Apellido y nombre <span class="req">*</span></label>
+                  <input type="text" id="cuota2Nombre" name="cuota2Nombre" required autocomplete="name" placeholder="Ej.: González, María Belén">
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="cuota2Dni">DNI <span class="req">*</span></label>
+                  <input type="text" id="cuota2Dni" name="cuota2Dni" required inputmode="numeric" pattern="[0-9.\s]{6,12}" placeholder="Ej.: 42.345.678">
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="cuota2Codigo">Código de inscripción (CJ27-XXXX)</label>
+                  <input type="text" id="cuota2Codigo" name="cuota2Codigo" placeholder="Ej.: CJ27-AB12 (opcional / recomendado)">
+                  <small class="field-hint">Si lo tenés a mano, ayuda a vincular tu pago más rápido.</small>
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group span-2">
+                  <label for="cuota2Archivo">
+                    Comprobante de 2.ª cuota (JPG, PNG o PDF · máx. 5 MB)
+                    <span class="req">*</span>
+                  </label>
+
+                  <div class="upload-zone" id="uploadZoneCuota2">
+                    <input
+                      type="file"
+                      id="cuota2Archivo"
+                      name="cuota2Archivo"
+                      accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf"
+                      class="upload-input"
+                    >
+                    <div class="upload-placeholder" id="uploadPlaceholderCuota2">
+                      <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="17 8 12 3 7 8"/>
+                        <line x1="12" y1="3" x2="12" y2="15"/>
+                      </svg>
+                      <p><strong>Tocá para subir</strong> o arrastrá el comprobante de tu 2.ª cuota</p>
+                      <span>Formatos permitidos: JPG, PNG o PDF</span>
+                    </div>
+
+                    <div class="upload-preview" id="uploadPreviewCuota2" hidden>
+                      <img id="previewImgCuota2" alt="Vista previa del comprobante de 2.ª cuota" hidden>
+                      <div class="pdf-badge" id="previewPdfBadgeCuota2" hidden>PDF</div>
+                      <div class="upload-file-meta">
+                        <strong id="previewFileNameCuota2">archivo.jpg</strong>
+                        <span id="previewFileSizeCuota2">0 KB</span>
+                      </div>
+                      <button type="button" class="btn-remove-file" id="btnRemoveFileCuota2" aria-label="Quitar archivo">
+                        Quitar
+                      </button>
+                    </div>
+                  </div>
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="form-submit-wrap">
+              <div class="form-global-error" id="cuota2GlobalError" role="alert" hidden></div>
+
+              <button type="submit" class="btn btn-primary btn-lg btn-submit" id="submitCuota2Btn">
+                <span class="btn-label">Enviar comprobante de 2.ª cuota</span>
+                <span class="btn-spinner" aria-hidden="true" hidden></span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Confirmación de 2.ª cuota -->
+          <div id="secondInstallmentConfirmation" class="confirmation-card" hidden aria-live="polite">
+            <div class="confirm-check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+
+            <h3>¡Comprobante de 2.ª cuota recibido!</h3>
+            <p class="confirm-subtitle">
+              Registramos la carga de tu 2.ª cuota para Campa Juve 2027. El equipo de tesorería validará el comprobante.
+            </p>
+
+            <div id="cuota2DemoNotice" class="demo-notice" hidden>
+              <strong>Modo vista previa:</strong> Todavía no se configuró una URL activa de Google Apps Script en <code>js/config.js</code>, por lo que esta carga se simuló localmente en tu navegador.
+            </div>
+
+            <dl class="confirm-summary" id="cuota2ConfirmSummary"></dl>
+
+            <div class="confirm-actions">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg" id="btnWhatsappCuota2">
+                Avisar por WhatsApp
+              </a>
+              <button type="button" class="btn btn-outline-navy" id="btnNewCuota2">
+                Cargar otro comprobante
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img
+          src="assets/logo-campa-juve-2027.png"
+          alt="Logo Campa Juve 2027"
+          class="footer-logo"
+          width="88"
+          height="69"
+          onerror="this.style.display='none';"
+        >
+        <div>
+          <strong>Campa Juve 2027 — 9.ª Edición</strong>
+          <p>Parroquia Nuestra Señora de Belén (Colastiné Norte) · Diócesis de Santa Fe, Argentina.</p>
+        </div>
+      </div>
+
+      <div class="footer-contact">
+        <h4>¿Tenés consultas?</h4>
+        <p>Escribinos por WhatsApp o seguinos para novedades del campamento.</p>
+        <div class="footer-links">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" data-config-whatsapp>
+            Consultar por WhatsApp
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm" data-config-href="INSTAGRAM_URL">
+            Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <small>© 2027 Campa Juve — 9.ª Edición · Diócesis de Santa Fe. Vivamos la eutrapelia en Cristo.</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast de notificaciones (copiado, etc.) -->
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <!-- Scripts (config centralizado primero, luego lógica) -->
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

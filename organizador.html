@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Inscripción de Organizadores — Campa Juve 2027 (9.ª Edición). Diócesis de Santa Fe.">
+  <meta name="theme-color" content="#08223B">
+  <title>Inscripción de Organizadores | Campa Juve 2027 — 9.ª Edición</title>
+
+  <link rel="icon" type="image/png" href="assets/logo-campa-juve-2027.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="top" data-role="organizador">
+  <a href="#inscripcion" class="skip-link">Saltar al formulario de organizadores</a>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Campa Juve 2027 — Volver a la web principal">
+        <img src="assets/fuego.svg" alt="Isotipo Fuego Campa Juve" class="brand-isotipo" height="32">
+        <img src="assets/carpa.svg" alt="Isotipo Carpa Campa Juve" class="brand-isotipo" height="32">
+      </a>
+
+      <nav aria-label="Volver a la web principal">
+        <a href="index.html" class="btn btn-outline-light btn-sm">← Volver a la web</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="inscripcion" class="section section-tinted">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Equipo Organizador · 9.ª Edición</span>
+          <h1 class="section-title">Inscripción de Organizadores</h1>
+          <p class="section-subtitle">
+            Completá tus datos y seleccioná el área del equipo a la que pertenecés. Tu registro se enviará a la planilla exclusiva de organizadores.
+          </p>
+        </div>
+
+        <!-- Selector entre Nueva inscripción y 2.ª cuota -->
+        <div class="form-mode-switcher" role="tablist" aria-label="Tipo de trámite">
+          <button
+            type="button"
+            class="mode-tab is-active"
+            id="tabInscripcion"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panelInscripcion"
+          >
+            Nueva inscripción (Organizador)
+          </button>
+          <button
+            type="button"
+            class="mode-tab"
+            id="tabSegundaCuota"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panelSegundaCuota"
+          >
+            ¿Ya te inscribiste? Cargá el comprobante de la 2.ª cuota
+          </button>
+        </div>
+
+        <div id="panelInscripcion" class="inscripcion-panel" role="tabpanel" aria-labelledby="tabInscripcion">
+          <div id="confettiLayer" class="confetti-layer" aria-hidden="true"></div>
+
+          <!-- Confirmación -->
+          <div id="confirmationPanel" class="confirmation-card" hidden aria-live="polite">
+            <div class="confirm-check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+
+            <h3>¡Felicitaciones! ¡Ya sos parte del campa!</h3>
+            <p class="confirm-subtitle">
+              ¡Gracias por sumarte al servicio en la 9.ª Edición de Campa Juve 2027! Guardá tu código único de inscripción:
+            </p>
+
+            <div class="code-box">
+              <span class="code-label">Código de inscripción (Organizador)</span>
+              <strong class="code-value" id="confirmCode">ORG27-XXXX</strong>
+              <button type="button" class="btn-copy" id="btnCopyCode">Copiar código</button>
+            </div>
+
+            <div id="confirmCuotasNote" class="cuotas-reminder" hidden>
+              <strong>Recordatorio de 2.ª cuota:</strong> Guardá o sacale captura a tu código <strong><span id="confirmCodeInline">ORG27-XXXX</span></strong> para cargar el comprobante de enero 2027 desde la pestaña <em>“¿Ya te inscribiste? Cargá el comprobante de la 2.ª cuota”</em>.
+            </div>
+
+            <div id="confirmDemoNotice" class="demo-notice" hidden>
+              <strong>Modo vista previa:</strong> Todavía no se configuró una URL activa en <code>ORGANIZADORES_SCRIPT_URL</code> dentro de <code>js/config.js</code>, por lo que esta inscripción se simuló localmente.
+            </div>
+
+            <dl class="confirm-summary" id="confirmSummary"></dl>
+
+            <div class="confirm-actions">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg" id="btnWhatsappConfirm">
+                Enviar mi código por WhatsApp
+              </a>
+              <button type="button" class="btn btn-outline-navy" id="btnGoToSegundaCuota">
+                Cargar comprobante de 2.ª cuota
+              </button>
+            </div>
+          </div>
+
+          <!-- Formulario de Organizadores -->
+          <form id="registrationForm" class="reg-form" novalidate>
+            <!-- Bloque Equipo de Organización -->
+            <fieldset class="form-card">
+              <legend class="form-legend">
+                <span class="step-badge step-badge-blue">★</span>
+                Equipo de organización
+              </legend>
+
+              <div class="form-grid">
+                <div class="form-group span-2">
+                  <label for="equipoOrganizador">¿A qué parte del equipo pertenecés? <span class="req">*</span></label>
+                  <select id="equipoOrganizador" name="equipoOrganizador" required>
+                    <option value="">Seleccioná tu área / equipo...</option>
+                    <option value="Coordinadores generales">Coordinadores generales</option>
+                    <option value="Comunicación">Comunicación</option>
+                    <option value="Logística y juegos">Logística y juegos</option>
+                    <option value="Cocina">Cocina</option>
+                    <option value="Espiritualidad">Espiritualidad</option>
+                    <option value="Economía">Economía</option>
+                  </select>
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Bloque 1: Datos personales -->
+            <fieldset class="form-card">
+              <legend class="form-legend">
+                <span class="step-badge">1</span>
+                Datos personales
+              </legend>
+
+              <div class="form-grid">
+                <div class="form-group span-2">
+                  <label for="nombreCompleto">Apellido y nombre <span class="req">*</span></label>
+                  <input type="text" id="nombreCompleto" name="nombreCompleto" required autocomplete="name" placeholder="Ej.: González, María Belén">
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="fechaNacimiento">Fecha de nacimiento <span class="req">*</span></label>
+                  <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="edad">Edad <span class="req">*</span></label>
+                  <input type="number" id="edad" name="edad" required min="12" max="99" placeholder="Se calcula automáticamente">
+                  <small class="field-hint">Se calcula con tu fecha de nacimiento (podés editarla).</small>
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="dni">DNI <span class="req">*</span></label>
+                  <input type="text" id="dni" name="dni" required inputmode="numeric" pattern="[0-9.\s]{6,12}" placeholder="Ej.: 42.345.678">
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="telefono">Número de teléfono personal <span class="req">*</span></label>
+                  <input type="tel" id="telefono" name="telefono" required autocomplete="tel" placeholder="Ej.: 342 5123456">
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="tutorNombre">Apellido y nombre de padre/madre/tutor <span class="req">*</span></label>
+                  <input type="text" id="tutorNombre" name="tutorNombre" required placeholder="Ej.: Pérez, Laura">
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="tutorTelefono">Número de padre/madre/tutor <span class="req">*</span></label>
+                  <input type="tel" id="tutorTelefono" name="tutorTelefono" required placeholder="Ej.: 342 4987654">
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Bloque 2: Comunidad de origen -->
+            <fieldset class="form-card">
+              <legend class="form-legend">
+                <span class="step-badge">2</span>
+                Comunidad de origen
+              </legend>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="parroquia">Parroquia que pertenece <span class="req">*</span></label>
+                  <input type="text" id="parroquia" name="parroquia" required placeholder="Ej.: Parroquia Nuestra Señora de Belén">
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="localidad">Localidad <span class="req">*</span></label>
+                  <input type="text" id="localidad" name="localidad" required placeholder="Ej.: Colastiné Norte, Santa Fe">
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Bloque 3: Experiencia -->
+            <fieldset class="form-card">
+              <legend class="form-legend">
+                <span class="step-badge">3</span>
+                Experiencia
+              </legend>
+
+              <div class="form-grid">
+                <div class="form-group span-2" id="participoCampaGroup">
+                  <label id="participoCampaLabel">¿Participaste de algún CampaJuve? <span class="req">*</span></label>
+                  <div class="radio-options" role="radiogroup" aria-labelledby="participoCampaLabel">
+                    <label class="radio-card">
+                      <input type="radio" name="participoCampa" value="Sí" required>
+                      <span>Sí</span>
+                    </label>
+                    <label class="radio-card">
+                      <input type="radio" name="participoCampa" value="No" required>
+                      <span>No</span>
+                    </label>
+                  </div>
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Bloque 4: Salud, cuidados y emergencias -->
+            <fieldset class="form-card">
+              <legend class="form-legend">
+                <span class="step-badge">4</span>
+                Salud, cuidados y emergencias
+              </legend>
+
+              <div class="form-grid">
+                <div class="form-group span-2">
+                  <label for="obraSocialAfiliado">Obra social y número de afiliado</label>
+                  <input type="text" id="obraSocialAfiliado" name="obraSocialAfiliado" placeholder="Ej.: IAPOS — N.º 12345678 / No posee">
+                </div>
+
+                <div class="form-group span-2">
+                  <label for="alergias">¿Es alérgico a algo? ¿A qué?</label>
+                  <textarea id="alergias" name="alergias" rows="2" placeholder="Indicá si sos alérgico a alimentos, medicamentos, picaduras, etc. (o escribí 'No')."></textarea>
+                </div>
+
+                <div class="form-group span-2">
+                  <label for="alimentacionEspecial">Alimentación especial</label>
+                  <input type="text" id="alimentacionEspecial" name="alimentacionEspecial" placeholder="Ej.: celiaquía, vegetarianismo, intolerancias u otra aclaración">
+                </div>
+
+                <div class="form-group span-2">
+                  <label for="tratamientoMedicacion">¿Se encuentra en tratamiento médico o consume medicación diaria?</label>
+                  <textarea id="tratamientoMedicacion" name="tratamientoMedicacion" rows="2" placeholder="Indicá tratamiento, medicación y dosis si corresponde (o escribí 'No')."></textarea>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Bloque 5: Pago y comprobante -->
+            <fieldset class="form-card">
+              <legend class="form-legend">
+                <span class="step-badge">5</span>
+                Pago y comprobante
+              </legend>
+
+              <div class="form-payment-bar">
+                <div class="form-payment-info">
+                  <div>
+                    <span class="mini-label">Alias:</span>
+                    <strong data-config="BANK_ALIAS">jovenes.belen</strong>
+                    <button type="button" class="btn-copy-inline" data-copy-target="BANK_ALIAS">Copiar</button>
+                  </div>
+                  <div>
+                    <span class="mini-label">Titular:</span>
+                    <strong data-config="BANK_HOLDER">Parroquia Nuestra Señora de Belén</strong>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-sm"
+                  data-open-pay-modal
+                >
+                  Pagar con Mercado Pago o banco
+                </button>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group span-2">
+                  <label for="modalidadPago">Modalidad de pago <span class="req">*</span></label>
+                  <select id="modalidadPago" name="modalidadPago" required>
+                    <option value="">Seleccioná una modalidad...</option>
+                    <option value="Pago total">Pago total</option>
+                    <option value="En 2 cuotas (1.ª cuota dic 2026 / 2.ª cuota ene 2027)">En 2 cuotas (1.ª cuota en diciembre 2026 y 2.ª cuota en enero 2027)</option>
+                    <option value="Solicitud de Beca / Fondo Solidario">Solicitud de Beca / Fondo Solidario</option>
+                  </select>
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group span-2" id="cuotasNoteBox" hidden>
+                  <div class="info-callout">
+                    <strong>Pago en 2 cuotas:</strong> Subí ahora el comprobante de tu <strong>1.ª cuota (diciembre 2026)</strong>. Al confirmar, guardá o sacale captura a tu código <code>CJ27-XXXX</code> para cargar después el comprobante de la 2.ª cuota en enero 2027.
+                  </div>
+                </div>
+
+                <div class="form-group span-2" id="becaNoteBox" hidden>
+                  <div class="info-callout">
+                    <strong>Fondo Solidario:</strong> No necesitás adjuntar comprobante ahora. El equipo de coordinación se pondrá en contacto con vos por WhatsApp con total reserva.
+                  </div>
+                  <label for="becaDetalle" class="mt-sm">¿Querés contarnos brevemente tu situación? (Opcional)</label>
+                  <textarea id="becaDetalle" name="becaDetalle" rows="2" placeholder="Ej.: Necesito beca parcial o facilidades de pago."></textarea>
+                </div>
+
+                <div class="form-group span-2" id="comprobanteGroup">
+                  <label for="comprobanteArchivo">
+                    <span id="comprobanteLabelText">Comprobante de Pago (JPG, PNG o PDF · máx. 5 MB)</span>
+                    <span class="req" id="comprobanteReqStar">*</span>
+                  </label>
+
+                  <div class="upload-zone" id="uploadZone">
+                    <input
+                      type="file"
+                      id="comprobanteArchivo"
+                      name="comprobanteArchivo"
+                      accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf"
+                      class="upload-input"
+                    >
+                    <div class="upload-placeholder" id="uploadPlaceholder">
+                      <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="17 8 12 3 7 8"/>
+                        <line x1="12" y1="3" x2="12" y2="15"/>
+                      </svg>
+                      <p><strong>Tocá para subir</strong> o arrastrá tu comprobante acá</p>
+                      <span>Formatos permitidos: JPG, PNG o PDF</span>
+                    </div>
+
+                    <div class="upload-preview" id="uploadPreview" hidden>
+                      <img id="previewImg" alt="Vista previa del comprobante" hidden>
+                      <div class="pdf-badge" id="previewPdfBadge" hidden>PDF</div>
+                      <div class="upload-file-meta">
+                        <strong id="previewFileName">archivo.jpg</strong>
+                        <span id="previewFileSize">0 KB</span>
+                      </div>
+                      <button type="button" class="btn-remove-file" id="btnRemoveFile" aria-label="Quitar archivo">
+                        Quitar
+                      </button>
+                    </div>
+                  </div>
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="form-submit-wrap">
+              <div class="form-global-error" id="formGlobalError" role="alert" hidden></div>
+
+              <button type="submit" class="btn btn-primary btn-lg btn-submit" id="submitBtn">
+                <span class="btn-label">Confirmar mi Inscripción</span>
+                <span class="btn-spinner" aria-hidden="true" hidden></span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Panel 2.ª cuota para organizadores -->
+        <div id="panelSegundaCuota" role="tabpanel" aria-labelledby="tabSegundaCuota" hidden>
+          <form id="secondInstallmentForm" class="reg-form" novalidate>
+            <fieldset class="form-card">
+              <legend class="form-legend">
+                <span class="step-badge step-badge-blue">2.ª</span>
+                Carga de comprobante — 2.ª cuota (Organizadores)
+              </legend>
+
+              <p class="cuota2-intro">
+                Si ya completaste tu inscripción de organizador en 2 cuotas, subí acá el comprobante de tu 2.ª cuota.
+              </p>
+
+              <div class="form-payment-bar">
+                <div class="form-payment-info">
+                  <div>
+                    <span class="mini-label">Alias:</span>
+                    <strong data-config="BANK_ALIAS">jovenes.belen</strong>
+                    <button type="button" class="btn-copy-inline" data-copy-target="BANK_ALIAS">Copiar</button>
+                  </div>
+                  <div>
+                    <span class="mini-label">Titular:</span>
+                    <strong data-config="BANK_HOLDER">Parroquia Nuestra Señora de Belén</strong>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-sm"
+                  data-open-pay-modal
+                >
+                  Pagar con Mercado Pago o banco
+                </button>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group span-2">
+                  <label for="cuota2Nombre">Apellido y nombre <span class="req">*</span></label>
+                  <input type="text" id="cuota2Nombre" name="cuota2Nombre" required autocomplete="name" placeholder="Ej.: González, María Belén">
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="cuota2Dni">DNI <span class="req">*</span></label>
+                  <input type="text" id="cuota2Dni" name="cuota2Dni" required inputmode="numeric" pattern="[0-9.\s]{6,12}" placeholder="Ej.: 42.345.678">
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="cuota2Codigo">Código de inscripción (CJ27-XXXX)</label>
+                  <input type="text" id="cuota2Codigo" name="cuota2Codigo" placeholder="Ej.: CJ27-AB12 (opcional / recomendado)">
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group span-2">
+                  <label for="cuota2Archivo">
+                    Comprobante de 2.ª cuota (JPG, PNG o PDF · máx. 5 MB)
+                    <span class="req">*</span>
+                  </label>
+
+                  <div class="upload-zone" id="uploadZoneCuota2">
+                    <input
+                      type="file"
+                      id="cuota2Archivo"
+                      name="cuota2Archivo"
+                      accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf"
+                      class="upload-input"
+                    >
+                    <div class="upload-placeholder" id="uploadPlaceholderCuota2">
+                      <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="17 8 12 3 7 8"/>
+                        <line x1="12" y1="3" x2="12" y2="15"/>
+                      </svg>
+                      <p><strong>Tocá para subir</strong> o arrastrá el comprobante de tu 2.ª cuota</p>
+                      <span>Formatos permitidos: JPG, PNG o PDF</span>
+                    </div>
+
+                    <div class="upload-preview" id="uploadPreviewCuota2" hidden>
+                      <img id="previewImgCuota2" alt="Vista previa del comprobante de 2.ª cuota" hidden>
+                      <div class="pdf-badge" id="previewPdfBadgeCuota2" hidden>PDF</div>
+                      <div class="upload-file-meta">
+                        <strong id="previewFileNameCuota2">archivo.jpg</strong>
+                        <span id="previewFileSizeCuota2">0 KB</span>
+                      </div>
+                      <button type="button" class="btn-remove-file" id="btnRemoveFileCuota2" aria-label="Quitar archivo">
+                        Quitar
+                      </button>
+                    </div>
+                  </div>
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="form-submit-wrap">
+              <div class="form-global-error" id="cuota2GlobalError" role="alert" hidden></div>
+
+              <button type="submit" class="btn btn-primary btn-lg btn-submit" id="submitCuota2Btn">
+                <span class="btn-label">Enviar comprobante de 2.ª cuota</span>
+                <span class="btn-spinner" aria-hidden="true" hidden></span>
+              </button>
+            </div>
+          </form>
+
+          <div id="secondInstallmentConfirmation" class="confirmation-card" hidden aria-live="polite">
+            <div class="confirm-check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+
+            <h3>¡Comprobante de 2.ª cuota recibido!</h3>
+            <p class="confirm-subtitle">
+              Registramos la carga de tu 2.ª cuota en la planilla de organizadores de Campa Juve 2027.
+            </p>
+
+            <div id="cuota2DemoNotice" class="demo-notice" hidden>
+              <strong>Modo vista previa:</strong> Todavía no se configuró una URL activa en <code>ORGANIZADORES_SCRIPT_URL</code> dentro de <code>js/config.js</code>, por lo que esta carga se simuló localmente.
+            </div>
+
+            <dl class="confirm-summary" id="cuota2ConfirmSummary"></dl>
+
+            <div class="confirm-actions">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg" id="btnWhatsappCuota2">
+                Avisar por WhatsApp
+              </a>
+              <button type="button" class="btn btn-outline-navy" id="btnNewCuota2">
+                Cargar otro comprobante
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
